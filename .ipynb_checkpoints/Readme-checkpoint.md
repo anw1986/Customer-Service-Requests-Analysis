@@ -11,7 +11,7 @@ NYC 311's mission is to provide the public with quick and easy access to all New
 Perform a service request data analysis of New York City 311 calls. 
 
 ## DATASET EXPLORATION & DATA WRANGLING 
-The dataset spanned from 
+The 311 dataset spanned from month-yyy to month-yyy, i.e., Moreover, the following explores more about the dataset:
 - The orignal dataset has 300,698 rows and 53 columns `df.shape`
 - Data type of column date was changed to datetime, to easily work with datetime in pandas 
 - Used `df.isna().sum()` to determine the missing values in each column. `df.info()` also provides the Non-Null Count and datatype for each column. Dropped the following columns with no data. 
@@ -40,7 +40,7 @@ df['Request_Closing_Time']=df['Closed Date'] - df['Created Date']
 ```
 - Avg response time by Borough and Complaint Type
 
-### Python Libraries utilized
+## PYTHON LIBRARIES
 - Pandas
 - Numpy
 - geopandas
