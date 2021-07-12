@@ -8,15 +8,41 @@ NYC 311's mission is to provide the public with quick and easy access to all New
 
 **Problem Objective :**
 
-Perform a service request data analysis of New York City 311 calls. You will focus on the data wrangling techniques to understand the pattern in the data and also visualize the major complaint types.
-Domain: Customer Service
+Perform a service request data analysis of New York City 311 calls. 
 
-**Analysis Tasks to be performed:**
+## DATASET EXPLORATION & DATA WRANGLING 
+The 311 dataset spanned from month-yyy to month-yyy, i.e., Moreover, the following explores more about the dataset:
+- The orignal dataset has 300,698 rows and 53 columns `df.shape`
+- Data type of column date was changed to datetime, to easily work with datetime in pandas 
+- Used `df.isna().sum()` to determine the missing values in each column. `df.info()` also provides the Non-Null Count and datatype for each column. Dropped the following columns with no data. 
+```Python
+drop_columns=["Landmark","School or Citywide Complaint","Vehicle Type","Taxi Company Borough"
+             ,"Taxi Pick Up Location","Bridge Highway Name","Bridge Highway Direction",
+             "Road Ramp","Bridge Highway Segment","Garage Lot Name","Ferry Direction",
+             "Ferry Terminal Name"]
+```
+- Find and replace NYPD to New York City Police Department in the Agenct Name column. 
+- Merged the geopandas NYC Burough geometry with the orignal dataset to get the burough multipolygon geometry
 
-(Perform a service request data analysis of New York City 311 calls) 
+## DATA ANALYSIS & INSIGHT
+The following analysis were performed on the dataset
+- Number of records by Complaint Type. 
+The following table tells us that blocked driveway, illegal parking, noise (street, commercial & vehicle) are amongst the highest complaint type received by 311  
+- Number of records by Status & Complaint Type
+- Number of records/tickets by Burough
+The highest number of requests came from Brooklyn 
+- Number of records/tickets by Month & Burrough
+Highest number of tickets created by month and burrogh.
+- Avg response time by Complaint Type and  Location Type
+response time is defined as 
+```python
+df['Request_Closing_Time']=df['Closed Date'] - df['Created Date']
+```
+- Avg response time by Borough and Complaint Type
 
-Import a 311 NYC service request.
-Read or convert the columns ‘Created Date’ and Closed Date’ to datetime datatype and create a new column ‘Request_Closing_Time’ as the time elapsed between request creation and request closing. (Hint: Explore the package/module datetime)
-Provide major insights/patterns that you can offer in a visual format (graphs or tables); at least 4 major conclusions that you can come up with after generic data mining.
-Order the complaint types based on the average ‘Request_Closing_Time’, grouping them for different locations.
-Perform a statistical test for the following:
+### Python Libraries utilized
+- Pandas
+- Numpy
+- geopandas
+- contextiy
+
