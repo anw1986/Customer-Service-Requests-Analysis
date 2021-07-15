@@ -71,7 +71,7 @@ The highest number of requests came from Brooklyn
 | Unspecified   |    2574 |
 
 The following is a heatmap
-![heat map(figures/buroughs_complaint_count.png)
+![heat map](figures/buroughs_complaint_count.png)
 
 
 - Number of records/tickets by Month & Burrough
