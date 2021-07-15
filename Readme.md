@@ -61,16 +61,17 @@ The following table tells us that blocked driveway, illegal parking, noise (stre
 - Number of records/tickets by Burough
 The highest number of requests came from Brooklyn 
 
-| Borough       |   number_of_record |
-|:--------------|-------------------:|
-| BRONX         |              40702 |
-| BROOKLYN      |              98307 |
-| MANHATTAN     |              66131 |
-| QUEENS        |              80641 |
-| STATEN ISLAND |              12343 |
+| Borough       |   count |
+|:--------------|--------:|
+| BROOKLYN      |   98307 |
+| QUEENS        |   80641 |
+| MANHATTAN     |   66131 |
+| BRONX         |   40702 |
+| STATEN ISLAND |   12343 |
+| Unspecified   |    2574 |
 
 The following is a heatmap
-
+![heat map(figures/buroughs_complaint_count.png)
 
 
 - Number of records/tickets by Month & Burrough
