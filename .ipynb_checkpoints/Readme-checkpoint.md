@@ -11,7 +11,7 @@ NYC 311's mission is to provide the public with quick and easy access to all New
 Perform a service request data analysis of New York City 311 calls. 
 
 ## DATASET EXPLORATION & DATA WRANGLING 
-The 311 dataset spans from month-yyy to month-yyy, i.e., days. Moreover, the following explores more about the dataset:
+The 311 dataset spans from March-2015 to December-2015, i.e., 277 days. Moreover, the following explores more about the dataset:
 - The orignal dataset has 300,698 rows and 53 columns `df.shape`
 - Data type of `columns=['Created Date' ,'Closed Date','Due Date','Resolution Action Updated Date']`  was changed to **datetime**, to easily work with datetime in pandas 
 - Used `df.isna().sum()` to determine the missing values in each column. `df.info()` also provides the Non-Null Count and datatype for each column. Dropped the following columns with no data. The new dataset is 300698 rows and 41 columns
@@ -73,6 +73,10 @@ The highest number of requests came from Brooklyn
 The following is a heatmap
 ![heat map](figures/buroughs_complaint_count.png)
 
+- Number of tickets by month and Burough (line graph)
+On the month over month ticket request trend, we notice that Summer and Fall seasons are were most tickets are raised for Brooklyn. Can be because of tourist influx in summer and school starting in the fall season. Also note that, this is counterintuitive, as one would lead to think that Manhattan, being the tourist center, should have the most tickets. However, Brooklyn is the most populous burough in NYC, therefore 311 is saying a lot of tickets from Brooklyn
+
+![line chart](figures/buroughs_monthlytrend_complaint.png)
 
 - Number of records/tickets by Month & Burrough
 Highest number of tickets created by month and burrogh.
@@ -82,6 +86,8 @@ response time is defined as
 df['Request_Closing_Time']=df['Closed Date'] - df['Created Date']
 ```
 - Avg response time by Borough and Complaint Type
+
+
 
 ## PYTHON LIBRARIES
 - Pandas

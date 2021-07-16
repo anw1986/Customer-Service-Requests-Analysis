@@ -73,6 +73,10 @@ The highest number of requests came from Brooklyn
 The following is a heatmap
 ![heat map](figures/buroughs_complaint_count.png)
 
+- Number of tickets by month and Burough (line graph)
+On the month over month ticket request trend, we notice that Summer and Fall seasons are were most tickets are raised for Brooklyn. Can be because of tourist influx in summer and school starting in the fall season. Also note that, this is counterintuitive, as one would lead to think that Manhattan, being the tourist center, should have the most tickets. However, Brooklyn is the most populous burough in NYC, therefore 311 is saying a lot of tickets from Brooklyn
+
+![line chart](figures/buroughs_monthlytrend_complaint.png)
 
 - Number of records/tickets by Month & Burrough
 Highest number of tickets created by month and burrogh.
@@ -83,7 +87,7 @@ df['Request_Closing_Time']=df['Closed Date'] - df['Created Date']
 ```
 - Avg response time by Borough and Complaint Type
 
-- Number of tickets by month and Burough (line graph)
+
 
 ## PYTHON LIBRARIES
 - Pandas
