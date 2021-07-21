@@ -27,7 +27,7 @@ drop_columns=["Landmark","School or Citywide Complaint","Vehicle Type","Taxi Com
 
 ## DATA ANALYSIS & INSIGHT
 The following insights were gathered from the dataset:
-- Number of records by Complaint Type. 
+- **Number of records by Complaint Type:** 
 The following table tells us that blocked driveway, illegal parking, noise (street, commercial & vehicle) are amongst the highest complaint type received by 311  
 
  Complaint Type            |   count |
@@ -57,8 +57,7 @@ The following table tells us that blocked driveway, illegal parking, noise (stre
 | Ferry Complaint           |       2 |
 | Animal in a Park          |       1 |
 
-- Number of records by Status & Complaint Type
-- Number of records/tickets by Burough
+- **Number of records/tickets by Burough:**
 The highest number of requests came from Brooklyn 
 
 | Borough       |   count |
@@ -71,24 +70,26 @@ The highest number of requests came from Brooklyn
 | Unspecified   |    2574 |
 
 The following is a heatmap
+
 ![heat map](figures/buroughs_complaint_count.png)
 
-- Number of tickets by month and Burough (line graph)
+- **Number of tickets by month and Burough (line graph):**
 On the month over month ticket request trend, we notice that Summer and Fall seasons are were most tickets are raised for Brooklyn. Can be because of tourist influx in summer and school starting in the fall season. Also note that, this is counterintuitive, as one would lead to think that Manhattan, being the tourist center, should have the most tickets. However, Brooklyn is the most populous burough in NYC, therefore 311 is saying a lot of tickets from Brooklyn
 
 ![line chart](figures/buroughs_monthlytrrend_complaint.png)
 
-- Avg response time by Complaint Type and  Location Type
-response time is defined as 
+- **Avg response time by Borough and Top 5 Complaint Type:**
+Response time is defined as 
+
 ```python
 df['Request_Closing_Time']=df['Closed Date'] - df['Created Date']
 ```
-- Avg response time by Borough and Complaint Type
 
+The avg response time for Noise is higher in the Bronx, Brooklyn, and Queens
 
 ## PYTHON LIBRARIES
 - Pandas
 - Numpy
 - geopandas
-- contextiy
+- Matplotlib
 
